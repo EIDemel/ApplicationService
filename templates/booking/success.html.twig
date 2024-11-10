@@ -1,0 +1,10 @@
+{# templates/booking/success.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Réservation réussie{% endblock %}
+
+{% block body %}
+    <h1>Merci pour votre réservation !</h1>
+    <p>Votre réservation a été enregistrée avec succès.</p>
+    <a href="{{ path('service_index') }}">Faire une nouvelle réservation</a>
+{% endblock %}

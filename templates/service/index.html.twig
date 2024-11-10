@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des services{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Services disponibles</h1>
+
+        {% if services is not empty %}
+            <div class="row">
+                {% for service in services %}
+                    <div class="col-md-4">
+                        <div class="composer require symfony/webpack-encore-bundle">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ service.name }}</h5>
+                                <p class="card-text">{{ service.description }}</p>
+                                <p class="card-text"><strong>Prix : </strong>{{ service.price }} €</p>
+                                <a href="{{ path('booking_new') }}?service_id={{ service.id }}" class="btn btn-primary">Réserver ce service</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Aucun service disponible pour le moment.</p>
+        {% endif %}
+    </div>
+{% endblock %}
